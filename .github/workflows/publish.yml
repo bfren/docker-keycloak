@@ -20,19 +20,19 @@ jobs:
         name: Read Keycloak version - major
         uses: bfren/read-file@v2
         with:
-          file: ./overlay/tmp/KEYCLOAK_MAJOR
+          file: ./KEYCLOAK_MAJOR
         id: keycloak_major
       -
         name: Read Keycloak version - minor
         uses: bfren/read-file@v2
         with:
-          file: ./overlay/tmp/KEYCLOAK_MINOR
+          file: ./KEYCLOAK_MINOR
         id: keycloak_minor
       -
         name: Read Keycloak version - revision
         uses: bfren/read-file@v2
         with:
-          file: ./overlay/tmp/KEYCLOAK_REVISION
+          file: ./KEYCLOAK_REVISION
         id: keycloak_revision
       -
         name: Read image version
