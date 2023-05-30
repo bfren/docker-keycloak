@@ -17,4 +17,4 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 # Use PostgreSQL
 ENV KC_DB=postgres
 
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--proxy", "edge"]
