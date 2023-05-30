@@ -35,6 +35,12 @@ jobs:
           file: ./KEYCLOAK_REVISION
         id: keycloak_revision
       -
+        name: Read Keycloak version - build
+        uses: bfren/read-file@v2
+        with:
+          file: ./KEYCLOAK_BUILD
+        id: keycloak_version
+      -
         name: Read image version
         uses: bfren/read-file@v2
         with:
@@ -72,6 +78,7 @@ jobs:
           build-args: |
             BF_IMAGE=${{ env.REPOSITORY_NAME }}
             BF_VERSION=${{ steps.version.outputs.contents }}
+            KEYCLOAK_VERSION=${{ steps.keycloak_version.outputs.contents }}
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
