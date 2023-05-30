@@ -57,7 +57,7 @@ jobs:
             BF_VERSION=${{ steps.version.outputs.contents }}
             KEYCLOAK_VERSION=${{ steps.keycloak_version.outputs.contents }}
           push: ${{ startsWith(github.ref, 'refs/heads/') }}
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
+          platforms: linux/amd64,linux/arm64
           tags: |
             bfren/keycloak:dev
             bfren/keycloak:${{ steps.version.outputs.contents }}-beta
